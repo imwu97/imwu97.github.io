@@ -2,9 +2,11 @@
   text-align: left;
   border-collapse: collapse;
   width: 100%;
+  border-width: 1px;
+  border-color: #eaeaea;
 }
 .markdown-content > table td {
-  border-top-width: 1px;
+  border-width: 1px;
   padding: 0.5rem;
   border-color: #eaeaea;
   font-size: 0.875rem;
@@ -295,6 +297,9 @@ pre code.markdown-content {
   cursor: zoom-in;
 }
 @media (prefers-color-scheme: dark) {
+  .markdown-content > table {
+    border-color: #333;
+  }
   .markdown-content > hr {
     border-color: #666;
   }
