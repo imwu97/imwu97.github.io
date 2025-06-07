@@ -1,0 +1,357 @@
+.markdown-content > table {
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+.markdown-content > table td {
+  border-top-width: 1px;
+  padding: 0.5rem;
+  border-color: #eaeaea;
+  font-size: 0.875rem;
+}
+.markdown-content > table td code {
+  vertical-align: baseline;
+  background-color: #fafafa;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  font-size: 0.75rem;
+  color: #6b46c1;
+}
+.markdown-content > table th {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #333;
+  padding: 0.5rem;
+  background-color: #fafafa;
+}
+.markdown-content figure {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+}
+.markdown-content > ol,
+.markdown-content > ul:not(.list-none) {
+  list-style-type: none;
+}
+.markdown-content {
+  line-height: 1.625;
+}
+.markdown-content > :first-child {
+  margin-top: 0;
+}
+.markdown-content > * + * {
+  margin-top: 1.5rem;
+}
+.markdown-content > ol > * + *,
+.markdown-content > ul > * + * {
+  margin-top: 1rem;
+}
+.markdown-content .subnav,
+.subnav.markdown-content {
+  display: -webkit-box;
+  display: flex;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom-width: 2px;
+  border-color: #999;
+}
+.markdown-content .subnav .subnav-link,
+.subnav-link.markdown-content .subnav,
+.subnav-link.subnav.markdown,
+.subnav.markdown-content .subnav-link {
+  margin-right: 1.5rem;
+  line-height: 1;
+  color: #000;
+  font-size: 0.875rem;
+}
+.markdown-content > h2::before,
+.markdown-content > h3::before {
+  display: block;
+  height: 6rem;
+  margin-top: -6rem;
+  visibility: hidden;
+  content: "";
+}
+.markdown-content > hr {
+  border-color: #eaeaea;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border-width: 0 0 2px;
+}
+.markdown-content > p strong,
+.markdown-content > ul strong {
+  font-weight: 600;
+  color: #111;
+  position: relative;
+  z-index: 10;
+  margin: 0 5px;
+}
+.markdown-content > p strong::before,
+.markdown-content > ul strong::before {
+  display: inline-block;
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  position: absolute;
+  background-color: #ffd602;
+  opacity: 0.3;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  left: 4px;
+  top: -4px;
+  z-index: -1;
+  border-radius: 0.4rem;
+}
+.markdown-content > ol li :not(pre) code,
+.markdown-content > ol li > code,
+.markdown-content > p code,
+.markdown-content > ul li :not(pre) code,
+.markdown-content > ul li > code,
+p.markdown-content code.markdown-content {
+  background-color: #fafafa;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  padding: 3px 9px;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  color: #805ad5;
+  vertical-align: baseline;
+  font-weight: 400;
+}
+.markdown-content > ol li strong code,
+.markdown-content > p strong code,
+.markdown-content > ul li strong code {
+  font-weight: 600;
+}
+.markdown-content > pre,
+pre.markdown-content {
+  font-weight: 400;
+  scrollbar-width: none;
+}
+.markdown-content > pre::-webkit-scrollbar,
+pre.markdown::-webkit-scrollbar {
+  display: none;
+}
+.markdown-content > blockquote,
+blockquote.markdown-content {
+  color: #7b341e;
+  font-size: 0.875rem;
+  background-color: #fffaf0;
+  padding: 1rem 2rem;
+}
+.markdown-content > blockquote p:first-of-type,
+blockquote.markdown-content p:first-of-type {
+  margin-top: 0;
+  border-left-width: 3px;
+  border-color: #dd6b20;
+  padding-left: 1rem;
+}
+.markdown-content > h3 > code,
+.markdown-content > h4 > code {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  background-color: #fafafa;
+}
+.markdown-content > h1,
+h1.markdown-content {
+  margin-bottom: 0.25rem;
+  line-height: 1;
+  color: #000;
+  font-weight: 300;
+  font-size: 1.875rem;
+}
+.markdown-content > h2,
+h2.markdown-content {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  color: #000;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.markdown-content > h2 + h3 {
+  margin-top: 1.5rem;
+}
+.markdown-content > h3,
+h3.markdown-content {
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+  color: #000;
+  line-height: 1.25;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+.markdown-content > h4,
+h4.markdown-content {
+  margin-top: 3rem;
+  margin-bottom: 0;
+  color: #000;
+  line-height: 1.375;
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+.markdown-content > h1 + p {
+  margin-top: 2rem;
+}
+.markdown-content > h1 > code,
+.markdown-content > h2 > code,
+.markdown-content > h3 > code,
+.markdown-content > h4 > code {
+  color: #805ad5;
+}
+.markdown-content > h3 > code {
+  font-size: 1.125rem;
+}
+.markdown-content > h4 > code {
+  font-size: 1rem;
+}
+.markdown-content > blockquote > p,
+.markdown-content > p,
+p.markdown-content {
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+.markdown-content > ul:not(.list-none) {
+  padding-left: 0;
+}
+.markdown-content > ul:not(.list-none) li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+.markdown-content > ul:not(.list-none) li::before {
+  position: absolute;
+  left: -5px;
+  color: #888;
+  display: inline-block;
+  margin-right: 0.75rem;
+  content: "\2022";
+  font-size: 30px;
+  line-height: 27px;
+}
+.markdown-content > ol {
+  counter-reset: item;
+}
+.markdown-content > ol > li {
+  position: relative;
+  padding-left: 2.5rem;
+}
+.markdown-content > ol > li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 1px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #c3dafe;
+  border-radius: 9999px;
+  color: #3c366b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  content: counter(item);
+  counter-increment: item;
+}
+.markdown-content > :not(pre):not(h1):not(h2):not(h3):not(h4) > code,
+.markdown-content > ol code,
+.markdown-content > ul code {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.markdown-content > ol li pre,
+.markdown-content > pre,
+.markdown-content > ul li pre,
+pre.markdown-content {
+  display: -webkit-box;
+  display: flex;
+  padding: 0;
+  background-color: #111;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.markdown-content > ol li pre code,
+.markdown-content > pre code,
+.markdown-content > ul li pre code,
+pre code.markdown-content {
+  padding: 1rem;
+  color: #eaeaea;
+  overflow: auto;
+}
+.markdown-content figure {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  background-color: #fafafa;
+  outline: 0;
+  flex-direction: column;
+}
+.markdown-content figure img {
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+@media (prefers-color-scheme: dark) {
+  .markdown-content > hr {
+    border-color: #666;
+  }
+  .markdown-content > p strong,
+  .markdown-content > ul strong {
+    color: #eaeaea;
+  }
+  .markdown-content > ol li :not(pre) code,
+  .markdown-content > ol li > code,
+  .markdown-content > p code,
+  .markdown-content > ul li :not(pre) code,
+  .markdown-content > ul li > code,
+  p.markdown-content code.markdown-content {
+    background-color: #333;
+    color: #b794f4;
+  }
+  .markdown-content > blockquote,
+  blockquote.markdown-content {
+    background-color: #b7791f;
+    color: #faf089;
+  }
+  .markdown-content > blockquote p:first-of-type,
+  blockquote.markdown-content p:first-of-type {
+    border-color: #ecc94b;
+  }
+  .markdown-content > ol > li::before {
+    background-color: #5a67d8;
+    color: #eaeaea;
+  }
+  .markdown-content > :not(pre):not(h1):not(h2):not(h3):not(h4) > code,
+  .markdown-content > ol code,
+  .markdown-content > ul code {
+    background-color: #333;
+    color: #b794f4;
+  }
+  .markdown-content > table th {
+    background-color: #333;
+    color: #999;
+  }
+  .markdown-content > table td {
+    border-color: #333;
+  }
+  .markdown-content > table td code {
+    background-color: #333;
+    color: #b794f4;
+  }
+  .markdown-content figure {
+    background-color: #666;
+  }
+  .markdown-content > h1,
+  .markdown-content > h2,
+  .markdown-content > h3,
+  .markdown-content > h4,
+  h1.markdown,
+  h2.markdown,
+  h3.markdown,
+  h4.markdown-content {
+    color: #eaeaea;
+  }
+}

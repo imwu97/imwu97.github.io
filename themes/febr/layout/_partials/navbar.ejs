@@ -1,0 +1,28 @@
+<div
+  class="fixed w-full py-3 z-10 transition-all duration-300"
+  :class="{ 'bg-[#333] shadow-md': scrolled, 'bg-[#333] md:bg-[#33333300] md:py-8 shadow-md md:shadow-none': !scrolled }">
+  <div class="flex justify-end px-4">
+    <div
+      class="w-8 h-8 flex justify-center items-center rounded-full md:hidden"
+      @click="showMenu = !showMenu">
+      <i class="ri-close-line" v-show="showMenu"></i>
+      <i class="ri-menu-3-line" v-show="!showMenu"></i>
+    </div>
+  </div>
+
+  <div
+    class="max-w-4xl w-full mx-auto text-center justify-center"
+    :class="{ 'flex flex-col md:flex-row': showMenu, 'hidden md:block': !showMenu }">
+    <% theme.navbars.forEach(function(navbar, index) { %>
+    <!-- 导航检测 开始 -->
+    <% if (navbar.enable) { %>
+    <a
+      href="<%- url_for(navbar.path) %>"
+      class="py-2 md:py-1 px-4 mx-4 inline-flex transition font-semibold rounded hover:bg-[#444]">
+      <%= __(navbar.name) %>
+    </a>
+    <% } %>
+    <!-- 导航检测 结束 -->
+    <% }); %>
+  </div>
+</div>

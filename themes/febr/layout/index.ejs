@@ -1,0 +1,101 @@
+<!-- 网站介绍 开始 -->
+<div class="relative flex flex-col md:flex-row my-4 px-4 md:px-0">
+  <div class="absolute top-0 left-0 h-full w-full bg-[#212529] opacity-0"></div>
+  <div class="flex-1 order-2 md:order-1">
+    <div class="flex flex-wrap">
+      <div class="mx-auto basis-2/3 relative w-full px-3.75">
+        <div class="py-28 text-center">
+          <div class="text-4xl font-bold"><%- config.title %></div>
+          <div class="text-xl mt-4 text-[#666]"><%- config.subtitle %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 网站介绍 结束 -->
+
+<!-- 文章 开始 -->
+<div class="mx-0 md:px-0 bg-[#444] rounded-none md:rounded-lg shadow">
+  <% page.posts.each(function(post) { %>
+  <!-- 文章项 开始 -->
+  <% if (post.published) { %>
+  <div
+    class="p-8 border-b border-[#333] flex flex-col md:flex-row relative overflow-hidden">
+    <div class="flex-1 order-2 md:order-1">
+      <!-- 标题 -->
+      <div class="text-2xl font-semibold mb-4">
+        <% if (post.isTop) { %>
+        <!-- 标记 开始 -->
+        <i
+          class="ri-star-line text-orange-200 text-2xl absolute left-0 ml-1 rotate-90"></i>
+        <!-- 标记 结束 -->
+        <% } %>
+        <a
+          href="<%- url_for(post.path) %>"
+          class="text-[#eaeaea] text-ellipsis border-b-2 border-dotted border-[#888] hover:border-[#eaeaea] transition-all duration-100">
+          <%= post.title %>
+        </a>
+      </div>
+
+      <!-- 发布时间 -->
+      <div class="mb-4 text-xs text-[#666]">
+        <span><%- date(post.date) %></span>
+        <span>, </span>
+        <span><%- relative_date(post.date) %></span>
+      </div>
+
+      <!-- 概况 -->
+      <div class="mb-4 text-[#999]">
+        <%- post.description || post.excerpt %>
+      </div>
+
+      <!-- 阅读更多按钮 -->
+      <a
+        href="<%- url_for(post.path) %>"
+        class="bg-yellow-300 px-4 py-2 text-xs text-[#333] font-semibold inline-flex items-center rounded shadow transition-all duration-100">
+        <%= __('Read more') %>
+      </a>
+    </div>
+
+    <% if (post.feature) { %>
+    <!-- 文章封面图 -->
+    <img
+      loading="lazy"
+      src="<%- post.feature %>"
+      alt="<%= post.title %>"
+      class="flex-shrink-0 self-start md:ml-4 mb-4 md:mb-0 rounded-sm object-cover order-1 md:order-2 w-full h-40 md:w-56 md:h-32" />
+    <% } %>
+  </div>
+  <% } %>
+  <!-- 文章项 结束 -->
+  <% }); %>
+</div>
+<!-- 文章 结束 -->
+
+<!-- 分页 开始 -->
+<% if (page.total > 1) { %>
+<div class="my-4 px-4 md:px-0 flex justify-between">
+  <!-- 上一页 开始 -->
+  <% if (page.prev !== 0) { %>
+  <a
+    href="<%- url_for(page.prev_link) %>"
+    class="text-[#eaeaea] bg-[#444] inline-flex items-center rounded text-sm font-semibold px-4 py-2 shadow transition-all duration-100 hover:shadow-md">
+    <i class="ri-arrow-left-line mr-4"></i>
+    <%= __('Prev') %>
+  </a>
+  <% } %>
+  <!-- 上一页 结束 -->
+
+  <!-- 下一页 开始 -->
+  <% if (page.next !== 0) { %>
+  <a
+    href="<%- url_for(page.next_link) %>"
+    class="text-[#eaeaea] bg-[#444] inline-flex items-center rounded text-sm font-semibold px-4 py-2 shadow transition-all duration-100 hover:shadow-md">
+    <%= __('Next') %>
+    <i class="ri-arrow-right-line ml-4"></i>
+  </a>
+  <% } %>
+  <!-- 下一页 结束 -->
+</div>
+<% } %>
+<!-- 分页 结束 -->

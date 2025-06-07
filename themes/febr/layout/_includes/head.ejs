@@ -1,0 +1,37 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<!-- Title -->
+<% var title = page.title; if (is_archive()) { title = __('Archives'); } else if
+(is_category()) { title = __('Categories'); } else if (is_tag()) { title =
+__('Tags'); } else if (title === 'About') { title = __('About'); } %>
+<title>
+  <% if (title) { %> <%= __(title) %> <% if (page.tag) { %> : <%= page.tag %><%
+  } %> <% if (page.category) { %> : <%= page.category %><% } %> | <% } %> <%=
+  config.title %>
+</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="/img/favicon.png" />
+
+<!-- Fonts -->
+<link
+  rel="stylesheet"
+  href="https://s1.hdslb.com/bfs/static/jinkela/long/font/regular.css" />
+
+<!-- RemixIcon -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/remixicon@4.6.0/fonts/remixicon.css" />
+
+<!-- HighlightJs -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/highlight.js@11.11.1/styles/atom-one-dark.min.css" />
+
+<!-- TailwindCss -->
+<%- css('css/tailwind/output') %>
+
+<!-- Css -->
+<%- css('css/app') %>

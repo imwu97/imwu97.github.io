@@ -1,0 +1,48 @@
+<div class="w-full mx-auto md:px-0 bg-[#444] rounded-none md:rounded shadow">
+  <div class="p-8">
+    <!-- 页面标题 -->
+    <div class="relative flex flex-col md:flex-row mb-4">
+      <div
+        class="absolute top-0 left-0 h-full w-full bg-[#212529] opacity-0"></div>
+
+      <div class="flex-1 order-2 md:order-1">
+        <div class="flex flex-wrap">
+          <div class="mx-auto basis-2/3 relative w-full px-3.75">
+            <div class="py-4 text-center">
+              <div class="text-3xl font-bold"><%= __('Archives') %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 遍历归档列表 -->
+    <div>
+      <% var years = {}; site.posts.sort('date').reverse().forEach(function
+      (post) { var year = post.date.year(); if (years[year] === undefined) {
+      years[year] = []; } years[year].push(post); }) %>
+
+      <!-- 遍历归档 -->
+      <% Object.keys(years).reverse().forEach(function(year){ %>
+      <div class="mb-4">
+        <div class="text-2xl font-semibold"><%= year %></div>
+        <div class="">
+          <% years[year].map(function(post){ %>
+          <!-- 文章项 开始 -->
+          <div class="relative">
+            <i
+              class="ri-star-line text-orange-200 absolute text-2xl left-0 rotate-90"></i>
+            <div class="mb-2 text-xl truncate ml-8">
+              <a href="<%- url_for(post.path) %>">
+                <%- post.title || "Untitled" %>
+              </a>
+            </div>
+          </div>
+          <!-- 文章项 结束 -->
+          <% }); %>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>

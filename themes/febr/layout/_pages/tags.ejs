@@ -1,0 +1,29 @@
+<div class="w-full mx-auto md:px-0 bg-[#444] rounded-none md:rounded shadow">
+  <div class="p-8">
+    <!-- 页面标题 -->
+    <div class="relative flex flex-col md:flex-row mb-4">
+      <div
+        class="absolute top-0 left-0 h-full w-full bg-[#212529] opacity-0"></div>
+
+      <div class="flex-1 order-2 md:order-1">
+        <div class="flex flex-wrap">
+          <div class="mx-auto basis-2/3 relative w-full px-3.75">
+            <div class="py-4 text-center">
+              <div class="text-3xl font-bold"><%= __('Tags') %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-row flex-wrap">
+      <% site.tags.each(function (tag) {%>
+      <div class="mx-4 my-2">
+        <a href="<%- url_for(tag.path) %>">
+          <%= tag.name %> ( <%- tag.length %> )
+        </a>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</div>

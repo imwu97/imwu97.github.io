@@ -1,0 +1,18 @@
+{
+  "name": "hexo-theme-febr",
+  "version": "1.0.0",
+  "description": "A simple and elegant theme for Hexo.",
+  "scripts": {
+    "tailwind": "tailwindcss -i ./source/css/tailwind/input.css -o ./source/css/tailwind/output.css",
+    "tailwind:watch": "tailwindcss -i ./source/css/tailwind/input.css -o ./source/css/tailwind/output.css --watch"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "febr"
+  ],
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  }
+}

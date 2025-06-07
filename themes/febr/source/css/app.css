@@ -1,0 +1,44 @@
+@import "animate.css";
+@import "markdown.css";
+
+body {
+  font-family: "HarmonyOS_Regular", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    Helvetica, Arial, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: "HarmonyOS_Regular";
+  }
+}
+
+a:not([class]) {
+  border-bottom-style: solid;
+  border-bottom-width: 0.2rem;
+  color: rgb(15, 97, 255);
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  border-color: rgba(15, 97, 255, 0.1);
+}
+a:not([class]):hover {
+  border-color: rgba(15, 97, 255, 0.5);
+}
+@media (prefers-color-scheme: dark) {
+  a:not([class]) {
+    color: #81a5f8;
+  }
+}
+
+/* selection start */
+::-moz-selection {
+  color: #fff;
+  background: #0085a1;
+  text-shadow: none;
+}
+::selection {
+  color: #fff;
+  background: #0085a1;
+  text-shadow: none;
+}
+/* selection end */

@@ -1,0 +1,17 @@
+<% if (page.type == 'categories') { %>
+<!-- 分类 Start -->
+<%- partial('_pages/categories') %>
+<!-- 分类 End -->
+<% } else if (page.type == 'tags') { %>
+<!-- 标签 Start -->
+<%- partial('_pages/tags') %>
+<!-- 标签 End -->
+<% } else if (page.type == 'about') { %>
+<!-- 关于 Start -->
+<%- partial('_pages/about') %>
+<!-- 关于 End -->
+<% } else { %>
+<!-- 其他 Start -->
+<%- partial('_pages/custom') %>
+<!-- 其他 End -->
+<% } %>
