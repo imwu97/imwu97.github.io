@@ -1,0 +1,53 @@
+name: Deploy Hexo To GitHub Pages
+
+on:
+  push:
+    branches: [main]  # 监听 main 分支的推送
+
+  workflow_dispatch:  # 允许手动触发
+
+jobs:
+  build:
+   runs-on: ubuntu-latest  # 使用最新的 Ubuntu 环境
+
+   steps:
+    - name: Checkout code  # 检出代码
+      uses: actions/checkout@v4
+
+    - name: Use Node.js 23
+      uses: actions/setup-node@v4
+      with:
+        node-version: 23  # 使用 Node.js 23
+
+    - name: Cache NPM dependencies
+      uses: actions/cache@v4
+      with:
+        path: node_modules  # 缓存 node_modules 目录
+        key: ${{ runner.OS }}-npm-cache
+        restore-keys: |
+          ${{ runner.os }}-npm-cache
+
+    - name: Install Dependencies  # 安装依赖
+      run: npm install
+
+    - name: Build Hexo  # 构建 Hexo
+      run: npm run build
+
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./public
+
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
