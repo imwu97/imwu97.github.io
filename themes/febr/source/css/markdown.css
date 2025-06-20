@@ -111,7 +111,7 @@
 .markdown-content > ul li > code,
 p.markdown-content code.markdown-content {
   background-color: #fafafa;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-size: 0.875rem;
   padding: 3px 9px;
   overflow-wrap: break-word;
@@ -279,6 +279,7 @@ pre.markdown-content {
 .markdown-content > pre code,
 .markdown-content > ul li pre code,
 pre code.markdown-content {
+  width: 100%;
   padding: 1rem;
   color: #eaeaea;
   overflow: auto;
@@ -291,6 +292,7 @@ pre code.markdown-content {
   background-color: #fafafa;
   outline: 0;
   flex-direction: column;
+  margin-top: 5px;
 }
 .markdown-content figure img {
   cursor: -webkit-zoom-in;
