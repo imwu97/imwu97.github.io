@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://imwu97.github.io</id>
+    <title>{ Wu-97 }</title>
+    <updated>2026-05-07T09:00:53.749Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://imwu97.github.io"/>
+    <link rel="self" href="https://imwu97.github.io/atom.xml"/>
+    <subtitle>凡事至终必善，苟未善者，犹未至终也。</subtitle>
+    <logo>https://imwu97.github.io/images/avatar.png</logo>
+    <icon>https://imwu97.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2026, { Wu-97 }</rights>
+    <entry>
+        <title type="html"><![CDATA[微信支付提示Function libxml_disable_entity_loader() is deprecated！的解决方案]]></title>
+        <id>https://imwu97.github.io/post/wei-xin-zhi-fu-ti-shi-function-libxml_disable_entity_loader-is-deprecatedde-jie-jue-fang-an/</id>
+        <link href="https://imwu97.github.io/post/wei-xin-zhi-fu-ti-shi-function-libxml_disable_entity_loader-is-deprecatedde-jie-jue-fang-an/">
+        </link>
+        <updated>2026-04-29T06:01:01.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>想象一下，你的 PHP 程序在解析微信支付发来的 XML 数据时，需要一个 &quot;安全开关&quot; 来防止黑客通过 XML 文件攻击你的服务器。这个开关就是 <code>libxml_disable_entity_loader()</code> 函数。<br>
+现在，PHP 升级到 8.0 以后，官方认为这个 &quot;开关&quot; 的设计太老了，直接把它给 &quot;淘汰&quot; 了。当你的程序（尤其是微信支付SDK）还在用这个旧开关时，系统就会报出这个弃用警告。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>想象一下，你的 PHP 程序在解析微信支付发来的 XML 数据时，需要一个 &quot;安全开关&quot; 来防止黑客通过 XML 文件攻击你的服务器。这个开关就是 <code>libxml_disable_entity_loader()</code> 函数。<br>
+现在，PHP 升级到 8.0 以后，官方认为这个 &quot;开关&quot; 的设计太老了，直接把它给 &quot;淘汰&quot; 了。当你的程序（尤其是微信支付SDK）还在用这个旧开关时，系统就会报出这个弃用警告。</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bootstrap Table中不转义Html标签的解决方案]]></title>
+        <id>https://imwu97.github.io/post/bootstrap-table-zhong-bu-zhuan-yi-html-biao-qian-de-jie-jue-fang-an/</id>
+        <link href="https://imwu97.github.io/post/bootstrap-table-zhong-bu-zhuan-yi-html-biao-qian-de-jie-jue-fang-an/">
+        </link>
+        <updated>2026-04-29T05:47:54.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>在 Bootstrap Table 中直接显示 HTML 标签内容是一个常见需求，比如希望 <code>&lt;br&gt;</code> 标签能实际换行而非显示为文本。问题的核心通常在于一个关键的配置参数。下面梳理解决方案和注意事项。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>在 Bootstrap Table 中直接显示 HTML 标签内容是一个常见需求，比如希望 <code>&lt;br&gt;</code> 标签能实际换行而非显示为文本。问题的核心通常在于一个关键的配置参数。下面梳理解决方案和注意事项。</p>
+</blockquote>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Bootstrap Table导出Excel时数据格式转换的解决方案]]></title>
+        <id>https://imwu97.github.io/post/bootstrap-table-dao-chu-excel-shi-shu-ju-ge-shi-zhuan-huan-de-jie-jue-fang-an/</id>
+        <link href="https://imwu97.github.io/post/bootstrap-table-dao-chu-excel-shi-shu-ju-ge-shi-zhuan-huan-de-jie-jue-fang-an/">
+        </link>
+        <updated>2026-04-29T05:39:57.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>在 Fastadmin 框架中，Bootstrap Table 导出 Excel 时会遇到数据格式被 Excel 自动转换的问题，比如数字变成科学计数法、日期格式错乱等。下面梳理常见的格式问题及其解决方案。</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>在 Fastadmin 框架中，Bootstrap Table 导出 Excel 时会遇到数据格式被 Excel 自动转换的问题，比如数字变成科学计数法、日期格式错乱等。下面梳理常见的格式问题及其解决方案。</p>
+</blockquote>
+]]></content>
+    </entry>
+</feed>

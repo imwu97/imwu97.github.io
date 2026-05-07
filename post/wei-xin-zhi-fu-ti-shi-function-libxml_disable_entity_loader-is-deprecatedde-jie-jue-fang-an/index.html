@@ -1,0 +1,255 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>微信支付提示Function libxml_disable_entity_loader() is deprecated！的解决方案 | { Wu-97 }</title>
+
+<link rel="shortcut icon" href="https://imwu97.github.io/favicon.ico?v=1778144449747">
+
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://imwu97.github.io/styles/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dockerfile.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/dart.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/moment@2.27.0/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+<!-- DEMO JS -->
+<!--<script src="media/scripts/index.js"></script>-->
+
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
+</head>
+<body>
+<div class="main gt-bg-theme-color-first">
+    <nav class="navbar navbar-expand-lg">
+    <div class="navbar-brand">
+        <img class="user-avatar" src="/images/avatar.png" alt="头像">
+        <div class="site-name gt-c-content-color-first">
+            { Wu-97 }
+        </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars gt-c-content-color-first" style="font-size: 18px"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="navbar-nav mr-auto" style="text-align: center">
+            
+                <div class="nav-item">
+                    
+                        <a href="/" class="menu gt-a-link">
+                            首页
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/archives" class="menu gt-a-link">
+                            归档
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/tags" class="menu gt-a-link">
+                            标签
+                        </a>
+                    
+                </div>
+            
+                <div class="nav-item">
+                    
+                        <a href="/post/about" class="menu gt-a-link">
+                            关于
+                        </a>
+                    
+                </div>
+            
+        </div>
+        <div style="text-align: center">
+            <form id="gridea-search-form" style="position: relative" data-update="1778144449747" action="/search/index.html">
+                <input class="search-input" autocomplete="off" spellcheck="false" name="q" placeholder="搜索文章" />
+                <i class="fas fa-search gt-c-content-color-first" style="position: absolute; top: 9px; left: 10px;"></i>
+            </form>
+        </div>
+    </div>
+</nav>
+
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    微信支付提示Function libxml_disable_entity_loader() is deprecated！的解决方案
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2026-04-29 ·
+                    </time>
+                    
+                        <a href="https://imwu97.github.io/tag/91aKOi8fuJ/" class="post-tags">
+                            # Fastadmin
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <blockquote>
+<p>想象一下，你的 PHP 程序在解析微信支付发来的 XML 数据时，需要一个 &quot;安全开关&quot; 来防止黑客通过 XML 文件攻击你的服务器。这个开关就是 <code>libxml_disable_entity_loader()</code> 函数。<br>
+现在，PHP 升级到 8.0 以后，官方认为这个 &quot;开关&quot; 的设计太老了，直接把它给 &quot;淘汰&quot; 了。当你的程序（尤其是微信支付SDK）还在用这个旧开关时，系统就会报出这个弃用警告。</p>
+</blockquote>
+<!-- more -->
+<h2 id="️-一-解决方案换上新开关安全又兼容">🛠️ 一、解决方案：换上新&quot;开关&quot;，安全又兼容</h2>
+<p>既然旧开关不让用了，就得换上新的 PHP 8.0 认可的安全设置。主要需要修改以下文件：</p>
+<p>📁 <strong>修改文件</strong>：<code>vendor/overtrue/wechat/src/Kernel/Support/XML.php</code> 中的 <code>parse</code> 方法。</p>
+<p>💡 <strong>修改思路</strong>：根据 PHP 版本，选择不同的 XML 解析方式，确保无论版本高低，都使用最安全的方式。</p>
+<h3 id="方案一统一使用最安全的新方法-推荐">方案一：统一使用最安全的新方法 ⭐ 推荐</h3>
+<p>最省心、最安全的方法。不再区分 PHP 版本，统一使用 PHP 官方推荐的安全选项来解析 XML。</p>
+<pre><code class="language-php">public static function parse($xml)
+{
+    // 核心：使用 LIBXML_NONET 等安全选项，彻底替代旧函数
+    $options = LIBXML_NONET | LIBXML_NOCDATA | LIBXML_NOBLANKS;
+    $xmlObject = simplexml_load_string($xml, 'SimpleXMLElement', $options);
+
+    if ($xmlObject === false) {
+        throw new \EasyWeChat\Kernel\Exceptions\InvalidArgumentException('Invalid XML string.');
+    }
+    return self::normalize($xmlObject);
+}
+</code></pre>
+<blockquote>
+<p>👍 <strong>好处</strong>：代码简洁，一劳永逸，安全有保障。<code>LIBXML_NONET</code> 这个选项能禁止 XML 解析时访问网络，是防御黑客攻击的关键。</p>
+</blockquote>
+<hr>
+<h3 id="方案二保留版本判断但优化新版本逻辑">方案二：保留版本判断，但优化新版本逻辑</h3>
+<p>如果你担心兼容性，可以保留对 PHP 版本的判断，但优化 PHP 8.0 以上的处理逻辑。</p>
+<pre><code class="language-php">public static function parse($xml)
+{
+    if (\PHP_VERSION_ID &lt; 80000) {
+        // PHP &lt; 8.0：使用旧方法
+        $backup = libxml_disable_entity_loader(true);
+        $result = self::normalize(simplexml_load_string(
+            self::sanitize($xml),
+            'SimpleXMLElement',
+            LIBXML_COMPACT | LIBXML_NOCDATA | LIBXML_NOBLANKS
+        ));
+        libxml_disable_entity_loader($backup);
+    } else {
+        // PHP &gt;= 8.0：使用新方法
+        $result = json_decode(json_encode(
+            simplexml_load_string($xml, 'SimpleXMLElement', LIBXML_NOCDATA),
+            JSON_UNESCAPED_UNICODE
+        ), true);
+    }
+
+    return $result;
+}
+</code></pre>
+<blockquote>
+<p>👍 <strong>好处</strong>：对旧环境兼容性更好，但代码稍复杂。</p>
+</blockquote>
+<hr>
+<h2 id="️-二-修改后必做事项">⚠️ 二、修改后必做事项</h2>
+<ol>
+<li><strong>🧹 清除缓存</strong>：修改了 <code>vendor</code> 目录下的文件后，一定要清除项目的缓存（比如 <code>Opcache</code>、框架缓存），否则新代码可能不生效。</li>
+<li><strong>🧪 全面测试</strong>：改完后，必须完整地走一遍微信支付流程，特别是支付成功后的 &quot;异步回调通知&quot;，确保支付状态能正常更新到你的数据库。</li>
+</ol>
+<hr>
+<h2 id="三-你可能还会遇到的连环坑">🚧 三、你可能还会遇到的&quot;连环坑&quot;</h2>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>原因</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>📭 支付回调收不到数据</td>
+<td>PHP 7.0+ 使用 <code>$GLOBALS['HTTP_RAW_POST_DATA']</code> 可能取不到数据</td>
+<td>改成 <code>file_get_contents(&quot;php://input&quot;)</code></td>
+</tr>
+<tr>
+<td>🔄 突然报 <code>302 Found</code> 错误</td>
+<td>微信服务器 IP 变更，但 hosts 文件仍指向旧 IP</td>
+<td>更新 hosts 文件或检查 DNS 解析</td>
+</tr>
+<tr>
+<td>🔒 SSL 证书验证错误</td>
+<td>测试环境证书问题（curl 错误码 60）</td>
+<td>临时关闭 <code>CURLOPT_SSL_VERIFYPEER</code>，但<strong>线上环境勿用</strong></td>
+</tr>
+<tr>
+<td>📱 小程序订阅消息报错 48001</td>
+<td>用错了接口地址</td>
+<td>使用专门的订阅消息接口</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="四-总结">💎 四、总结</h2>
+<p>解决 <code>libxml_disable_entity_loader() is deprecated</code> 警告，就是把微信支付 SDK 里解析 XML 的旧安全设置，换成 PHP 8.0 以上版本认可的新安全设置。</p>
+<p>最直接的办法就是修改 <code>XML.php</code> 文件，使用 <code>LIBXML_NONET</code> 等选项。这就像给程序做一次 &quot;安全升级&quot;，既消除了烦人的警告，也让你的应用在面对潜在的 XML 攻击时更坚固。</p>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://imwu97.github.io/post/bootstrap-table-zhong-bu-zhuan-yi-html-biao-qian-de-jie-jue-fang-an/" class="post-title gt-a-link">
+                    Bootstrap Table中不转义Html标签的解决方案
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
+        <div class="site-footer gt-c-content-color-first">
+    <div class="slogan gt-c-content-color-first">凡事至终必善，苟未善者，犹未至终也。</div>
+    <div class="social-container">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </div>
+    <div class="footer-info">
+        Powered by <a href="https://github.com/imwu97" target="_blank">imwu97</a>
+    </div>
+    <div>
+        Theme by <a href="https://imhanjie.com/" target="_blank">imhanjie</a>, Powered by <a
+                href="https://github.com/getgridea/gridea" target="_blank">Gridea | <a href="https://imwu97.github.io/atom.xml" target="_blank">RSS</a></a>
+    </div>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+    </div>
+</div>
+</body>
+</html>
